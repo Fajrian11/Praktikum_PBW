@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="h-screen w-full flex justify-center items-center flex-col gap-y-4" id="app">
+        <!-- <h1 id="output-1">Warna</h1>  -->
+        <!-- <h1 id="output-2"></h1> -->
+        <img :src="profileUser" class="rounded-full border border-gray-100 shadow-sm">
+        <h1>{{ namaUser }} {{ namaUserLast }}</h1>
+        <button @click="generatorUser()">Generator user</button>
+        <!-- <h1 class="tex-4xl text-black-900 font-bold">Data Covid Terkini</h1>
+        <span>orang sembuh : {{ orangSembuh }}</span>
+        <span>orang Meninggal : {{ orangMeninggal }}</span>
+        <span>orang Terpapar : {{ orangDirawat }}</span> -->
+        <!-- <ul
+            class="flex flex-col gap-y-1"
+            v-for="(kegiatan, index) in dataKegiatan"
+            :key="index"
+        >
+            <li class="bg-blue-300 rounded-lg p-2">{{ kegiatan }} 
+                <span @click="getDataKegiatan(kegiatan)" class="font-bold text-green cursor-pointer">U</span>
+                <span @click="hapusKegiatan(index)" class="font-bold text-red-900 cursor-pointer">x</span></li>
+        </ul>
+        <input 
+        v-model="kegiatan"
+        class="border-[1px] rounded-full hover:drop-shadow-md hover:border-white focus:outline-none px-3 h-auto w-1/4 py-2" 
+        type="text" 
+        id="input" 
+        placeholder="Cari Gambar">
+        <button 
+        @click="tambahKegiatan()"
+        id="btn-2"
+        class="bg-gray-100 rounded-full p-4"
+        >Tambah Kegiatan</button> -->
+    </div>
+    <script src="./indexuser.js"></script>
+    
+</body>
+</html>
