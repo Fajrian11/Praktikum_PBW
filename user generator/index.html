@@ -13,9 +13,27 @@
     <div class="h-screen w-full flex justify-center items-center flex-col gap-y-4" id="app">
         <!-- <h1 id="output-1">Warna</h1>  -->
         <!-- <h1 id="output-2"></h1> -->
-        <img :src="profileUser" class="rounded-full border border-gray-100 shadow-sm">
-        <h1>{{ namaUser }} {{ namaUserLast }}</h1>
-        <button @click="generatorUser()">Generator user</button>
+        <!-- <img :src="profileUser" class="rounded-full border border-gray-100 shadow-sm"> -->
+        <!-- <h1>{{ namaUser }} {{ namaUserLast }}</h1> -->
+        <table>
+            <td width="200px">
+                <!-- <button @click="generatorMakanan()">Makanan</button>
+                <h1 v-for="nMakanan in namaMakanan = ">Makanan : {{ nMakanan.nama }}</h1> -->
+                <button @click="generatorMakanan()">Makanan</button>
+                <h1 v-for="nMakanan in namaMakanan">{{ nMakanan.id }}. {{ nMakanan.nama }} Rasa {{ nMakanan.nama }}</h1>
+            </td>
+            <td width="200px">
+                <!-- <button @click="generatorMakanan()">Makanan</button>
+                <h1 v-for="nMakanan in namaMakanan = ">Makanan : {{ nMakanan.nama }}</h1> -->
+                <button @click="generatorMinuman()">Minuman</button>
+                <h1 v-for="nMinuman in namaMinuman">{{ nMinuman.id }}. {{ nMinuman.nama }} Rasa {{ nMinuman.nama }}</h1>
+            </td>
+            
+            <td>
+                <!-- <button @click="generatorUser()">Generator user</button>
+                <h1>{{ namaMakanan }}</h1> -->
+            </td>
+        </table>
         <!-- <h1 class="tex-4xl text-black-900 font-bold">Data Covid Terkini</h1>
         <span>orang sembuh : {{ orangSembuh }}</span>
         <span>orang Meninggal : {{ orangMeninggal }}</span>

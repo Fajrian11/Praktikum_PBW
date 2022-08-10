@@ -98,23 +98,43 @@ const { createApp, ref } = Vue;
 
 const app = createApp({
     setup() {
-        const url = "https://randomuser.me/api/";
+        // const url = "https://randomuser.me/api/";
+        const url = "http://localhost:7000/";
         const profileUser = ref("");
         const namaUser = ref(""); 
         const namaUserLast = ref(""); 
-
+        const namaMakanan = ref("");
+        const namaMinuman = ref("");
+        
         const generatorUser = async () => {
-            const resUser = await axios.get(url);
+            const resUser = await axios.get(url+"makanan");
+            namaUser.value = resUser.data.nama;
+            // namaMakanan.value = resUser.data;
             namaUser.value = resUser.data.results[0].name.first;
             namaUserLast.value = resUser.data.results[0].name.last;
             profileUser.value = resUser.data.results[0].picture.large;
         }
+        const generatorMakanan = async () => {
+            const resUser = await axios.get(url+"makanan");
+            namaMakanan.value = resUser.data;
+            namaMinuman.value = "";
+        }
+
+        const generatorMinuman = async () => {
+            const resUser = await axios.get(url+"minuman");
+            namaMinuman.value = resUser.data;
+            namaMakanan.value = "";
+        }
 
         return {
             generatorUser,
+            generatorMakanan,
+            generatorMinuman,
             profileUser,
             namaUser,
             namaUserLast,
+            namaMakanan,
+            namaMinuman,
         };
     },
 });
